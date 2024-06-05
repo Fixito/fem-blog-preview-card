@@ -2,7 +2,7 @@
   font-family: 'Figtree';
   src: url('../assets/fonts/Figtree-VariableFont_wght.ttf')
     format('truetype');
-  font-weight: 500;
+  font-weight: 400 800;
   font-style: normal;
 }
 
@@ -10,7 +10,7 @@
   font-family: 'Figtree';
   src: url('../assets/fonts/Figtree-Italic-VariableFont_wght.ttf')
     format('truetype');
-  font-weight: 500;
+  font-weight: 400;
   font-style: italic;
 }
 
@@ -26,7 +26,7 @@
   font-family: 'Figtree';
   src: url('../assets/fonts/static/Figtree-ExtraBold.ttf')
     format('truetype');
-  font-weight: 600;
+  font-weight: 800;
   font-style: normal;
 }
 
@@ -56,26 +56,28 @@
   --ff-sans: 'Figtree', sans-serif;
   --fw-normal: 400;
   --fw-medium: 500;
-  --fw-semibold: 600;
+  --fw-extrabold: 800;
 
   /* Rest of vars */
   --rounded: 0.25rem;
-  --rounded-xl: 0.75rem;
+  --rounded-xl: 0.625rem;
   --rounded-3xl: 1.25rem;
-  --shadow: 8px 8px 0px 0px rgb(0 0 0);
+  --shadow-1: 8px 8px 0px 0px rgb(0 0 0);
+  --shadow-2: 16px 16px 0px 0px rgb(0 0 0);
   --card-size: 24rem;
+  --transition: all 0.3s ease;
 }
 
 html {
   font-family: var(--ff-sans);
-  font-weight: var(--fw-medium);
+  font-weight: var(--fw-normal);
+  font-size: var(--fs-base);
   line-height: 1.5;
   color: var(--clr-black);
 }
 
 body {
   background-color: var(--clr-primary);
-  font-size: var(--fs-base);
 }
 
 a {
@@ -93,7 +95,7 @@ h3 {
 .img {
   display: block;
   object-fit: cover;
-  max-inline-size: 100%;
+  inline-size: 100%;
 }
 
 main {
@@ -113,8 +115,17 @@ main {
   padding: 1.5rem;
   max-inline-size: var(--card-size);
   border-radius: var(--rounded-3xl);
-  border: 1px solid var(--black);
-  box-shadow: var(--shadow);
+  outline: 1px solid var(--black);
+  box-shadow: var(--shadow-1);
+  transition: var(--transition);
+}
+
+.card:hover {
+  box-shadow: var(--shadow-2);
+}
+
+.card:hover .card__title {
+  color: var(--clr-primary);
 }
 
 .card > * + * {
@@ -123,38 +134,35 @@ main {
 
 .card__img {
   border-radius: var(--rounded-xl);
+  height: 200px;
 }
 
 .card__content > * + * {
   margin-block-start: 0.75rem;
 }
 
-.card__content__category {
+.card__category {
   display: inline-block;
   background-color: var(--clr-primary);
   border-radius: var(--rounded);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-extrabold);
   font-size: var(--fs-sm);
   padding: 0.25rem 0.75rem;
 }
 
-.card__content__date {
+.card__date {
   font-size: var(--fs-sm);
 }
 
-.card__content__title {
-  display: block;
+.card__title {
   font-size: var(--fs-2xl);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-extrabold);
+  transition: var(--transition);
 }
 
-.card__content__title:hover {
-  color: var(--clr-primary);
-  caret-color: var(--black);
-}
-
-.card__content__description {
+.card__description {
   color: var(--clr-neutral);
+  font-weight: var(--fw-medium);
 }
 
 .card__footer {
@@ -168,7 +176,7 @@ main {
   aspect-ratio: 1/1;
 }
 
-.card__footer__author {
+.card__author {
   font-size: var(--fs-sm);
-  font-weight: var(--fw-semibold);
+  font-weight: var(--fw-extrabold);
 }
