@@ -152,6 +152,7 @@ main {
 
 .card__date {
   font-size: var(--fs-sm);
+  font-weight: var(--fw-medium);
 }
 
 .card__title {
