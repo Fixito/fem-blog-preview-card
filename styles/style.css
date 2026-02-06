@@ -32,13 +32,6 @@
   box-sizing: border-box;
 }
 
-@media screen and (prefers-reduced-motion: reduce) {
-  * {
-    transition-duration: 1ms !important;
-    transition-delay: -1ms !important;
-  }
-}
-
 *:focus-visible {
   outline-style: solid;
   outline-width: 2px;
@@ -130,11 +123,6 @@ main {
   &:has(a:focus-visible) {
     box-shadow: var(--shadow-2);
   }
-
-  &:hover .card__title,
-  &:has(a:focus-visible) .card__title {
-    color: var(--clr-primary);
-  }
 }
 
 .card > * + * {
@@ -168,6 +156,21 @@ main {
   font-size: var(--fs-2xl);
   font-weight: var(--fw-extrabold);
   transition: var(--transition);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .card,
+  .card__title {
+    transition: none;
+  }
+}
+
+.card:hover .card__title {
+  color: var(--clr-primary);
+}
+
+.card:has(:focus-visible) .card__title {
+  color: var(--clr-primary);
 }
 
 .card__link-overlay {
