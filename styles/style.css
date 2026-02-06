@@ -120,8 +120,8 @@ main {
   background-color: var(--white);
   padding: 1.5rem;
   max-inline-size: var(--card-size);
+  outline: 1px solid var(--clr-neutral-950);
   border-radius: var(--rounded-3xl);
-  outline: 1px solid var(--black);
   box-shadow: var(--shadow-1);
   transition: var(--transition);
   isolation: isolate;
@@ -143,7 +143,7 @@ main {
 
 .card__img {
   border-radius: var(--rounded-xl);
-  height: 200px;
+  block-size: 12.5rem;
 }
 
 .card__content > * + * {

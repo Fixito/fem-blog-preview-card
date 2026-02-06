@@ -24,7 +24,7 @@ Users should be able to:
 
 ### Screenshot
 
-![Blog preview card](./screenshot.png)
+![Blog preview card](./screenshot.webp)
 
 ### Links
 
